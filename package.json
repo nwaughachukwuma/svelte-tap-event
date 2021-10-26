@@ -2,14 +2,19 @@
   "name": "svelte-pointer-events",
   "version": "0.0.1",
   "description": "Simple pointer events support for Svelte",
-  "main": "index.js",
+  "main": "dist/index.js",
   "type": "module",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "tsc": "tsc",
     "test": "ava"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "ava": "^3.15.0"
+    "ava": "^3.15.0",
+    "typescript": "^4.4.4"
   }
 }
