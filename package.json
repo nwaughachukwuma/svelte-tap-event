@@ -3,14 +3,14 @@
   "version": "0.0.1",
   "description": "Simple pointer events support for Svelte",
   "repository": {
-		"type": "git",
-		"url": "nwaughachukwuma/svelte-pointer-events",
-		"directory": "https://github.com/nwaughachukwuma"
-	},
-	"author": {
-		"name": "Chukwuma Nwaugha",
-		"email": "nwaughac@gmail.com"
-	},
+    "type": "git",
+    "url": "nwaughachukwuma/svelte-pointer-events",
+    "directory": "https://github.com/nwaughachukwuma"
+  },
+  "author": {
+    "name": "Chukwuma Nwaugha",
+    "email": "nwaughac@gmail.com"
+  },
   "main": "dist/index.js",
   "type": "module",
   "files": [
