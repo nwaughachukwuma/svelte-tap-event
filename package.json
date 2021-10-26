@@ -1,6 +1,6 @@
 {
   "name": "svelte-touch-events",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simple pointer/touch events support for Svelte",
   "repository": {
     "type": "git",
@@ -12,16 +12,16 @@
     "email": "nwaughac@gmail.com"
   },
   "type": "module",
-  "main": "./dist/svelte-trigger-action.umd.js",
-  "module": "./dist/svelte-trigger-action.es.js",
-  "types": "./dist/types/index.d.ts",
+  "main": "./dist/svelte-touch-events.umd.js",
+  "module": "./dist/svelte-touch-events.es.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
-      "import": "./dist/svelte-trigger-action.es.js",
-      "require": "./dist/svelte-trigger-action.umd.js"
+      "import": "./dist/svelte-touch-events.es.js",
+      "require": "./dist/svelte-touch-events.umd.js"
     },
     "./package.json": "./package.json"
   },
