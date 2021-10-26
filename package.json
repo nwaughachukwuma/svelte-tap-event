@@ -16,6 +16,8 @@
   "files": [
     "dist"
   ],
+  "exports": "./dist/index.js",
+  "sideEffects": false,
   "scripts": {
     "tsc": "tsc",
     "test": "ava"
