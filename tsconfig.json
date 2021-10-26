@@ -16,7 +16,8 @@
       "sourceRoot": "/",
       "noEmit": false,
       "outDir": "dist",
-      "baseUrl": "."
+      "baseUrl": ".",
+      "forceConsistentCasingInFileNames": true,
     },
     "include": ["src/lib"]
   }
