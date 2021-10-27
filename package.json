@@ -1,7 +1,7 @@
 {
   "name": "svelte-touch-events",
   "version": "0.0.6",
-  "description": "Simple pointer/touch events support for Svelte",
+  "description": "Simple cross platform pointer/touch events support for Svelte",
   "repository": {
     "type": "git",
     "url": "nwaughachukwuma/svelte-pointer-events",
@@ -12,22 +12,27 @@
     "email": "nwaughac@gmail.com"
   },
   "type": "module",
-  "types": "./dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "main": "./dist/index.js",
   "exports": "./dist/index.js",
   "files": [
     "dist"
   ],
+  "keywords": [
+		"svelte-touch",
+    "svelte-tap",
+    "svelte-hover",
+		"iOS double tap",
+    "iOS single tap support"
+	],
   "sideEffects": false,
   "scripts": {
     "tsc": "tsc",
-    "test": "ava",
     "dev": "vite"
   },
   "license": "ISC",
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
-    "ava": "^3.15.0",
     "svelte": "^3.44.0",
     "svelte-preprocess": "^4.9.8",
     "typescript": "^4.4.4",
