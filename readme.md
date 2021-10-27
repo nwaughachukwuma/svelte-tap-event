@@ -34,7 +34,7 @@ Note [typescript project]: to use it on a `HTMLElement` e.g. a div or a tag, cre
 ```ts
 declare namespace svelte.JSX {
   export interface DOMAttributes<T> {
-    ontap: (e: CustomEvent<T>) => void;
+    ontap?: (e: CustomEvent<T>) => void;
   }
 }
 ```
