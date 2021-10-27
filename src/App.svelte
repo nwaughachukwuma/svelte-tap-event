@@ -18,13 +18,15 @@
   on:touchleave={touchLeave}
   on:tap={tap}
 >
-  <div>Hello world!</div>
+  <div>Tap me</div>
 </app>
 
 <style>
   app div {
     border: 1px solid red;
-    padding: 10px;
+    padding: 20px;
     margin: auto;
+    display: flex;
+    justify-content: center;
   }
 </style>
