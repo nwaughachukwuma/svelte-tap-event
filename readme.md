@@ -34,7 +34,20 @@ Note [typescript project]: to use it on a `HTMLElement` e.g. a div or a tag, cre
 ```ts
 declare namespace svelte.JSX {
   export interface DOMAttributes<T> {
-    ontap?: CompositionEventHandler<T>
+    ontap: (e: CustomEvent<T>) => void;
   }
 }
 ```
+
+## API
+
+### tapEvent
+
+the event data containing a custom `detail` payload
+
+- **detail**
+  Type: object
+  - **type**: the trigger type <br>
+   Type: 'click' | 'tap'<br>
+    - 'click': when the tap event is triggered by a mouse action
+    - 'tap': when the tap event is triggered by a touch action

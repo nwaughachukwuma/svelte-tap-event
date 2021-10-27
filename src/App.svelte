@@ -1,8 +1,8 @@
 <script lang="ts">
   import touchEvents from "./lib";
 
-  const tap = (e: CustomEvent) => {
-    console.log("tap", e.detail);
+  const tap = ({ detail }: CustomEvent) => {
+    console.log("tap", detail);
   };
 </script>
 
