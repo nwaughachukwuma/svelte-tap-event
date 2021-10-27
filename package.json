@@ -1,6 +1,6 @@
 {
   "name": "svelte-touch-events",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Simple cross platform pointer/touch events support for Svelte",
   "repository": {
     "type": "git",
