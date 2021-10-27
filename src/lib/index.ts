@@ -1,10 +1,12 @@
 const touchSpot: { x?: number; y?: number } = {};
 const TOUCH_POINT_BUFFER = 10;
+let tapTouch = false;
 
 export default function touchEvents(node: HTMLElement) {
+  node.style.touchAction = "none";
   node.addEventListener("pointerenter", pointerEnterHandler);
   node.addEventListener("pointerleave", pointerLeaveHandler);
-  node.addEventListener("click", clickHandler);
+  node.addEventListener("click", (e) => clickHandler(e, node));
 
   return {
     destroy() {
@@ -19,27 +21,36 @@ function pointerEnterHandler(e: PointerEvent) {
   e.preventDefault();
   touchSpot.x = e.x;
   touchSpot.y = e.y;
+  tapTouch = false;
 
   e.target?.dispatchEvent(new CustomEvent("touchenter"));
 }
 
 function pointerLeaveHandler(e: PointerEvent) {
   e.preventDefault();
+  e.target?.dispatchEvent(new CustomEvent("touchleave"));
+
   if (e.pointerType === "touch") {
     if (touchSpot.x && touchSpot.y) {
       if (
         Math.abs(touchSpot.x - e.x) < TOUCH_POINT_BUFFER &&
         Math.abs(touchSpot.y - e.y) < TOUCH_POINT_BUFFER
       ) {
-        return clickHandler(e);
+        clickHandler(e);
       }
     }
   }
-
-  e.target?.dispatchEvent(new CustomEvent("touchleave"));
 }
 
-function clickHandler(e: Event) {
+function clickHandler(e: Event, node?: HTMLElement) {
   e.preventDefault();
-  e.target?.dispatchEvent(new CustomEvent("tap"));
+
+  if (!tapTouch) {
+    const target = node ?? e.target;
+    target?.dispatchEvent(new CustomEvent("tap"));
+
+    if (e.type !== "click") {
+      tapTouch = true;
+    }
+  }
 }
