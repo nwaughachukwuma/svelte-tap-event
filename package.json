@@ -1,5 +1,5 @@
 {
-  "name": "svelte-touch-events",
+  "name": "svelte-tap-event",
   "version": "0.0.8",
   "description": "Simple cross platform pointer/touch events support for Svelte",
   "repository": {
@@ -13,12 +13,12 @@
   },
   "type": "module",
   "types": "dist/index.d.ts",
-  "main": "./dist/svelte-touch-events.umd.js",
-  "module": "./dist/svelte-touch-events.es.js",
+  "main": "./dist/svelte-tap-event.umd.js",
+  "module": "./dist/svelte-tap-event.es.js",
   "exports": {
     ".": {
-      "import": "./dist/svelte-touch-events.es.js",
-      "require": "./dist/svelte-touch-events.umd.js"
+      "import": "./dist/svelte-tap-event.es.js",
+      "require": "./dist/svelte-tap-event.umd.js"
     },
     "./package.json": "./package.json"
   },

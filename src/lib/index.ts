@@ -22,13 +22,10 @@ function pointerEnterHandler(e: PointerEvent) {
   touchSpot.x = e.x;
   touchSpot.y = e.y;
   tapTouch = false;
-
-  e.target?.dispatchEvent(new CustomEvent("touchenter"));
 }
 
 function pointerLeaveHandler(e: PointerEvent) {
   e.preventDefault();
-  e.target?.dispatchEvent(new CustomEvent("touchleave"));
 
   if (e.pointerType === "touch") {
     if (touchSpot.x && touchSpot.y) {
