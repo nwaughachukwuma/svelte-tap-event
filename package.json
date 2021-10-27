@@ -1,10 +1,10 @@
 {
   "name": "svelte-tap-event",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Simple cross platform pointer/touch events support for Svelte",
   "repository": {
     "type": "git",
-    "url": "nwaughachukwuma/svelte-pointer-events",
+    "url": "nwaughachukwuma/svelte-tap-event",
     "directory": "https://github.com/nwaughachukwuma"
   },
   "author": {
@@ -28,7 +28,6 @@
   "keywords": [
 		"svelte-touch",
     "svelte-tap",
-    "svelte-hover",
 		"iOS double tap",
     "iOS single tap support"
 	],
