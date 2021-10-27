@@ -12,26 +12,17 @@
     "email": "nwaughac@gmail.com"
   },
   "type": "module",
-  "main": "./dist/svelte-touch-events.umd.js",
-  "module": "./dist/svelte-touch-events.es.js",
   "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "exports": "./dist/index.js",
   "files": [
     "dist"
   ],
-  "exports": {
-    ".": {
-      "import": "./dist/svelte-touch-events.es.js",
-      "require": "./dist/svelte-touch-events.umd.js"
-    },
-    "./package.json": "./package.json"
-  },
   "sideEffects": false,
   "scripts": {
     "tsc": "tsc",
     "test": "ava",
-    "dev": "vite",
-    "build": "vite build && tsc",
-    "serve": "vite preview"
+    "dev": "vite"
   },
   "license": "ISC",
   "devDependencies": {

@@ -21,7 +21,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm run test
-      - run: npm run build
+      - run: npm run tsc
       - if: matrix.node-version == 14
         uses: JS-DevTools/npm-publish@v1
         with:
