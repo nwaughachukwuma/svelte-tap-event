@@ -44,7 +44,11 @@ function clickHandler(e: Event, node?: HTMLElement) {
 
   if (!tapTouch) {
     const target = node ?? e.target;
-    target?.dispatchEvent(new CustomEvent("tap"));
+    target?.dispatchEvent(
+      new CustomEvent("tap", {
+        detail: { type: e.type === "pointerleave" ? "tap" : "click" },
+      })
+    );
 
     if (e.type !== "click") {
       tapTouch = true;
