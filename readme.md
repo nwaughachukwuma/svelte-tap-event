@@ -1,10 +1,19 @@
 # svelte-pointer-events
 
-Simple pointer events support for Svelte
+Simple pointer/touch events support in Svelte for devices of all input forms.
+
+## Challenge
+
+Read the post on [The Annoying Mobile Double-Tap Link Issue](https://css-tricks.com/annoying-mobile-double-tap-link-issue/).
+
+## Motivation
+
+The goal is to provide a consistent interface for all device types and as well solve touch-twice-to-activate a click issue on iOS.
 
 TODO:
 
-- [ ] Update the readme
+- [ ] API description
+- [ ] Example
 
 ## Example
 
