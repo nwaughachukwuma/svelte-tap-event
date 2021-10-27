@@ -1,6 +1,6 @@
 {
   "name": "svelte-touch-events",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Simple cross platform pointer/touch events support for Svelte",
   "repository": {
     "type": "git",
@@ -13,8 +13,15 @@
   },
   "type": "module",
   "types": "dist/index.d.ts",
-  "main": "./dist/index.js",
-  "exports": "./dist/index.js",
+  "main": "./dist/svelte-touch-events.umd.js",
+  "module": "./dist/svelte-touch-events.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/svelte-touch-events.es.js",
+      "require": "./dist/svelte-touch-events.umd.js"
+    },
+    "./package.json": "./package.json"
+  },
   "files": [
     "dist"
   ],
@@ -28,7 +35,8 @@
   "sideEffects": false,
   "scripts": {
     "tsc": "tsc",
-    "dev": "vite"
+    "dev": "vite",
+    "build": "vite build && tsc"
   },
   "license": "ISC",
   "devDependencies": {
