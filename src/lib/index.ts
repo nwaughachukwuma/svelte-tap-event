@@ -29,14 +29,15 @@ function pointerLeaveHandler(e: PointerEvent) {
 
   if (e.pointerType === "touch") {
     if (touchSpot.x && touchSpot.y) {
-      if (
-        Math.abs(touchSpot.x - e.x) < TOUCH_POINT_BUFFER &&
-        Math.abs(touchSpot.y - e.y) < TOUCH_POINT_BUFFER
-      ) {
+      if (bufferRange(touchSpot.x, e.x) && bufferRange(touchSpot.y, e.y)) {
         clickHandler(e);
       }
     }
   }
+}
+
+function bufferRange(p1: number, p2: number) {
+  return Math.abs(p1 - p2) < TOUCH_POINT_BUFFER;
 }
 
 function clickHandler(e: Event, node?: HTMLElement) {
@@ -44,14 +45,18 @@ function clickHandler(e: Event, node?: HTMLElement) {
 
   if (!tapTouch) {
     const target = node ?? e.target;
-    target?.dispatchEvent(
-      new CustomEvent("tap", {
-        detail: { type: e.type === "pointerleave" ? "touch" : "click" },
-      })
-    );
+    dispatchTap(e, target);
 
-    if (e.type !== "click") {
+    if (e.type === "pointerleave") {
       tapTouch = true;
     }
   }
+}
+
+function dispatchTap(e: Event, target: EventTarget | null) {
+  target?.dispatchEvent(
+    new CustomEvent("tap", {
+      detail: { type: e.type === "pointerleave" ? "touch" : "click" },
+    })
+  );
 }
