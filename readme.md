@@ -1,6 +1,6 @@
 # svelte-tap-event
 
-Simple click/tap support in Svelte for devices of all input forms.
+Simple cross platform click/touch event support for Svelte.
 
 ## Challenge
 
@@ -8,25 +8,47 @@ Read the post on [The Annoying Mobile Double-Tap Link Issue](https://css-tricks.
 
 ## Motivation
 
-The goal is to provide a consistent interface for all device types and as well solve touch-twice-to-activate a click issue on iOS.
+The goal is to provide a consistent interface for all device types and as well solve touch-twice-to-activate a click/tap issue on iOS.
 
 TODO:
 
-- [ ] API description
-- [ ] Example
-
-## Example
-
-See a demo here: https://svelte.dev/repl/283339196318412e8e649f5999e8819c?version=3.44.0
+- [X] API description
+- [X] Example
 
 ## Installation
 
-```
+```bash
 pnpm install svelte-tap-event
 
 yarn add svelte-tap-event
 
 npm install svelte-tap-event
+```
+
+## Example
+
+See a demo here: https://svelte.dev/repl/283339196318412e8e649f5999e8819c?version=3.44.0
+
+```svelte
+<script>
+import tapEvent from 'svelte-tap-event'
+
+let tapCounter = 0
+const onTap = () => {
+	tapCounter++
+}
+</script>
+
+<div use:tapEvent on:tap={onTap}>
+	<h1 class="header">Tap me!</h1>
+
+	{#if tapCounter}
+		<p>
+			Tapped x{tapCounter}
+		</p>
+	{/if}
+
+</div>
 ```
 
 Note [typescript project]: to use it on a `HTMLElement` e.g. a div or a tag, create a `declaration.d.ts` file with the following content and ensure to reference the file in `tsconfig.json`
@@ -43,11 +65,18 @@ declare namespace svelte.JSX {
 
 ### tapEvent
 
-the event data containing a custom `detail` payload
+Instance of `CustomEvent` containing event data with a `detail` payload
 
-- **detail**
-  Type: object
-  - **type**: the trigger type <br>
-   Type: 'click' | 'tap'<br>
-    - 'click': when the tap event is triggered by a mouse action
-    - 'tap': when the tap event is triggered by a touch action
+**detail**<br>
+Type: object
+
+Defined as:
+
+```ts
+detail: {
+  type: 'click' | 'touch';
+}
+```
+
+- 'click': tap is triggered by a mouse action
+- 'touch': tap is triggered by a touch action
