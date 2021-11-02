@@ -51,6 +51,26 @@ const onTap = () => {
 </div>
 ```
 
+You can get what event triggered the tap - click or touch
+
+```svelte
+<script>
+import tapEvent from 'svelte-tap-event'
+
+const onTap = ({detail}: CustomEvent) => {
+  if (detail.type === 'touch') {
+    // do something
+  } else {
+    // it's a click - do something else
+  }
+}
+</script>
+
+<div use:tapEvent on:tap={onTap}>
+...
+</div>
+```
+
 Note [typescript project]: to use it on a `HTMLElement` e.g. a div or a tag, create a `declaration.d.ts` file with the following content and ensure to reference the file in `tsconfig.json`
 
 ```ts
