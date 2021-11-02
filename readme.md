@@ -78,5 +78,5 @@ detail: {
 }
 ```
 
-- 'click': tap is triggered by a mouse action
-- 'touch': tap is triggered by a touch action
+- 'click': triggered by a mouse action
+- 'touch': triggered by a touch action
