@@ -1,9 +1,12 @@
 export default function touchEvents(node: HTMLElement) {
-  node.style.touchAction = "none";
-
   const touchSpot: { x?: number; y?: number } = {};
   const TOUCH_POINT_BUFFER = 10;
   let tapTouch = false;
+
+  node.style.touchAction = "none";
+  node.addEventListener("pointerenter", pointerEnterHandler);
+  node.addEventListener("pointerleave", pointerLeaveHandler);
+  node.addEventListener("click", (e) => clickHandler(e, node));
 
   function pointerEnterHandler(e: PointerEvent) {
     e.preventDefault();
@@ -48,10 +51,6 @@ export default function touchEvents(node: HTMLElement) {
     const detail = { type: e.type === "pointerleave" ? "touch" : "click" };
     target?.dispatchEvent(new CustomEvent("tap", { detail }));
   }
-
-  node.addEventListener("pointerenter", pointerEnterHandler);
-  node.addEventListener("pointerleave", pointerLeaveHandler);
-  node.addEventListener("click", (e) => clickHandler(e, node));
 
   return {
     destroy() {
