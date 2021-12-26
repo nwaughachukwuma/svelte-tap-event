@@ -1,6 +1,6 @@
 {
   "name": "svelte-tap-event",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Simple cross platform click/touch event support for Svelte",
   "repository": {
     "type": "git",
