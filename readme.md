@@ -18,16 +18,19 @@ TODO:
 ## Installation
 
 ```bash
+# pnpm
 pnpm install svelte-tap-event
 
+# yarn
 yarn add svelte-tap-event
 
+# npm
 npm install svelte-tap-event
 ```
 
 ## Example
 
-See a demo here: https://svelte.dev/repl/283339196318412e8e649f5999e8819c?version=3.44.0
+See a demo here: <https://svelte.dev/repl/283339196318412e8e649f5999e8819c?version=3.44.0>
 
 ```svelte
 <script>
@@ -97,5 +100,5 @@ detail: {
 }
 ```
 
-- 'click': triggered by a mouse action
-- 'touch': triggered by a touch action
+- `'click'`: triggered by a mouse action
+- `'touch'`: triggered by a touch action
