@@ -35,19 +35,18 @@ import tapEvent from 'svelte-tap-event'
 
 let tapCounter = 0
 const onTap = () => {
-	tapCounter++
+ tapCounter++
 }
 </script>
 
 <div use:tapEvent on:tap={onTap}>
-	<h1 class="header">Tap me!</h1>
+  <h1 class="header">Tap me!</h1>
 
-	{#if tapCounter}
-		<p>
-			Tapped x{tapCounter}
-		</p>
-	{/if}
-
+  {#if tapCounter}
+    <p>
+     Tapped x{tapCounter}
+    </p>
+  {/if}
 </div>
 ```
 
