@@ -7,10 +7,7 @@
     "url": "nwaughachukwuma/svelte-tap-event",
     "directory": "https://github.com/nwaughachukwuma"
   },
-  "author": {
-    "name": "Chukwuma Nwaugha",
-    "email": "nwaughac@gmail.com"
-  },
+  "author": "nwaughachukwuma<nwaughac@gmail.com>",
   "type": "module",
   "types": "dist/index.d.ts",
   "main": "./dist/svelte-tap-event.umd.js",
